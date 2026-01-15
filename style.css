@@ -14,8 +14,9 @@
 
 :root {
     --text-color: #fff;
-    --bg-color: #080808; /* Hitam sedikit lebih soft */
+    --bg-color: #080808; 
     --main-color: #007bff;
+    --second-bg-color: #1a1a1a;
     --h1-font: 4.5rem;
     --h2-font: 3rem;
     --p-font: 1rem;
@@ -37,7 +38,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 8%; /* Memberi jarak di pinggir */
+    padding: 15px 8%; 
     backdrop-filter: blur(10px);
 }
 
@@ -80,22 +81,22 @@ span {
     color: var(--main-color);
 }
 
-/* Memperbaiki masalah gambar besar */
 .menu-icon {
-    display: none; /* Sembunyikan di desktop */
+    display: none; 
     font-size: 24px;
     cursor: pointer;
 }
 
 section {
-    padding: 100px 10% 80px; /* Padding lebih proporsional */
-    min-height: 100vh;
+    padding: 100px 10% 80px; 
 }
 
+/* Home Section */
 .home {
+    min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4)), url('images/Faust.jpg'); /* Background gambar transparan (opsional) */
+    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4)), url('images/Faust.jpg'); 
     background-size: cover;
     background-position: center;
 }
@@ -134,9 +135,177 @@ section {
     transform: translateY(-3px);
 }
 
-/* Responsi untuk Mobile */
+/* About Section */
+.about {
+    display: grid;
+    grid-template-columns: 1fr; /* Changed to 1fr for simple text layout */
+    align-items: center;
+    gap: 2rem;
+}
+
+.about-text h2 {
+    font-size: var(--h2-font);
+    line-height: 1;
+}
+
+.about-text h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    line-height: 1.7;
+    margin: 15px 0 30px;
+}
+
+.about-text p {
+    color: var(--text-color);
+    font-size: var(--p-font);
+    line-height: 1.8;
+    margin-bottom: 4rem;
+}
+
+/* Services Section */
+.services {
+    background: var(--second-bg-color);
+}
+
+.main-text {
+    text-align: center;
+}
+
+.main-text h2 {
+    font-size: var(--h2-font);
+    line-height: 1;
+}
+
+.services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 5rem;
+}
+
+.box {
+    background: var(--bg-color);
+    padding: 35px 45px;
+    border-radius: 8px;
+    transition: all .4s ease;
+}
+
+.box:hover {
+    transform: translateY(-8px);
+    cursor: pointer;
+}
+
+.box i {
+    font-size: 32px;
+    color: var(--main-color);
+    margin-bottom: 20px;
+}
+
+.box h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.box p {
+    color: var(--text-color);
+    font-size: var(--p-font);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.read {
+    display: inline-block;
+    padding: 8px 18px;
+    background: var(--main-color);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: ease .4s;
+}
+
+.read:hover {
+    transform: scale(1.1);
+}
+
+/* Contact Section */
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-content h2 {
+    font-size: var(--h2-font);
+    margin-bottom: 15px;
+}
+
+.contact-content p {
+    font-size: var(--p-font);
+    margin-bottom: 25px;
+}
+
+.contact-list {
+    margin-bottom: 3rem;
+}
+
+.contact-list li {
+    margin-bottom: 15px;
+    display: block;
+}
+
+.contact-list i {
+    color: var(--main-color);
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.contact-list a {
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 500;
+    transition: all .4s ease;
+}
+
+.contact-list a:hover {
+    color: var(--main-color);
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--main-color);
+    text-decoration: none;
+    margin: 0 8px;
+    transition: all .4s ease;
+}
+
+.social-icons a:hover {
+    background: var(--main-color);
+    color: var(--text-color);
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .navbar { display: none; }
     .menu-icon { display: block; }
-    :root { --h1-font: 3rem; }
+    :root { 
+        --h1-font: 3rem; 
+        --h2-font: 2.5rem;
+    }
+    section { padding: 70px 5% 60px; }
 }
