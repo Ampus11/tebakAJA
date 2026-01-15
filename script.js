@@ -5,17 +5,16 @@ const images = [
     'images/shorekeeper4.png'
 ];
 
-let currentIndex = 0;
 const homeSection = document.querySelector('.home');
 
-function changeBackground() {
-    // Keep the gradient overlay while changing the image
-    homeSection.style.backgroundImage = `linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4)), url('${images[currentIndex]}')`;
-    currentIndex = (currentIndex + 1) % images.length;
+function setRandomBackground() {
+    // Select a random image from the array
+    const randomIndex = Math.floor(Math.random() * images.length);
+    const selectedImage = images[randomIndex];
+    
+    // Apply the background with the gradient overlay
+    homeSection.style.backgroundImage = `linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4)), url('${selectedImage}')`;
 }
 
-// Change background every 3 seconds
-setInterval(changeBackground, 3000);
-
-// Set initial background
-changeBackground();
+// Set the background when the script loads (on refresh)
+setRandomBackground();
