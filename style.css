@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --text-color: #fff;
+    --bg-color: #080808; /* Hitam sedikit lebih soft */
+    --main-color: #007bff;
+    --h1-font: 4.5rem;
+    --h2-font: 3rem;
+    --p-font: 1rem;
+}
+
+body {
+    color: var(--text-color);
+    background: var(--bg-color);
+    line-height: 1.6;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%; /* Memberi jarak di pinggir */
+    backdrop-filter: blur(10px);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+    margin-right: 12px;
+}
+
+.logo-name {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar a {
+    color: var(--text-color);
+    font-size: var(--p-font);
+    font-weight: 500;
+    margin-left: 35px;
+    transition: all .3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: var(--main-color);
+}
+
+/* Memperbaiki masalah gambar besar */
+.menu-icon {
+    display: none; /* Sembunyikan di desktop */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+section {
+    padding: 100px 10% 80px; /* Padding lebih proporsional */
+    min-height: 100vh;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.4)), url('images/Faust.jpg'); /* Background gambar transparan (opsional) */
+    background-size: cover;
+    background-position: center;
+}
+
+.home-content h5 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--main-color);
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.home-content h1 {
+    font-size: var(--h1-font);
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.home-content p {
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--main-color);
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 20px var(--main-color);
+    transform: translateY(-3px);
+}
+
+/* Responsi untuk Mobile */
+@media (max-width: 768px) {
+    .navbar { display: none; }
+    .menu-icon { display: block; }
+    :root { --h1-font: 3rem; }
+}
